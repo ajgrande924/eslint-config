@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+'use strict';
+
+const cp            = require('child_process');
+const { promisify } = require('util');
+const winston       = require('winston');
+const pkg           = require('./package.json');
+
+const exec = promisify(cp.exec);
+
+(async () => {
+  
+  const published = await exec(`npm view ${pkg.name}@${pkg.version}`);
+  if (!published.stdout || published.stdout === '') {
+    winston.log('info', `Package ${pkg.name}@${pkg.version} does not exist in registry. Publishing new version...`);
+    await exec(`npm publish`);
+  } else {
+    winston.log('info', `Package ${pkg.name}@${pkg.version} does exist in registry. Not publishing...`);
+  }
+
+})();

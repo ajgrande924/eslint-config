@@ -9,6 +9,7 @@
   "author": "AJ Grande",
   "license": "MIT",
   "devDependencies": {
-    "ava": "^0.25.0"
+    "ava": "^0.25.0",
+    "winston": "^2.4.1"
   }
 }
