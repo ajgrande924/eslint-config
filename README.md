@@ -7,7 +7,9 @@
 ## Install
 
 ```sh
-	npm install --save @ajgrande924/eslint-config
+
+npm install --save @ajgrande924/eslint-config
+
 ```
 
 ## Usage
@@ -15,9 +17,11 @@
 Add property to `package.json`:
 
 ```sh
-	...
-	"eslintConfig": {
-	  "extends": "@ajgrande924/eslint-config/node4/.eslintrc"
-	}
-	...
+
+...
+"eslintConfig": {
+  "extends": "@ajgrande924/eslint-config/node4/.eslintrc"
+}
+...
+
 ```
